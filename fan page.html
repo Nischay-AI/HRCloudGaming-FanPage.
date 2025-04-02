@@ -1,0 +1,121 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝗧𝗼 𝗛𝗥 𝗖𝗹𝗼𝘂𝗱 𝗚𝗮𝗺𝗶𝗻𝗴 𝗙𝗮𝗻 𝗣𝗮𝗴𝗲! ⚡</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #222;
+            color: white;
+        }
+        h1 {
+            font-size: 40px;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { color: cyan; }
+            to { color: magenta; }
+        }
+        iframe {
+            width: 80%;
+            max-width: 600px;
+            height: 350px;
+            border: none;
+            margin-top: 20px;
+        }
+        #likeBtn {
+            padding: 10px 20px;
+            font-size: 20px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #likeBtn:hover {
+            background: darkgreen;
+        }
+        #comments {
+            width: 80%;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .comment-box {
+            background: #444;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .subscribe {
+            margin-top: 20px;
+            font-size: 18px;
+            background: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .subscribe:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>✦ 𝒲𝑒𝓁𝒸𝑜𝓂𝑒 𝒯𝑜 𝐻𝑅 𝒞𝓁𝑜𝓊𝒹 𝒢𝒶𝓂𝒾𝓃𝑔 𝐹𝒶𝓃 𝒫𝒶𝑔𝑒! ✦</h1>
+    <p>Watch the latest video and subscribe for more!</p>
+
+    <!-- YouTube Video Embed -->
+    <iframe src="https://www.youtube.com/embed/SOm9wHMMgfg" allowfullscreen=""></iframe>
+
+    <!-- Subscribe Button -->
+    <br>
+    <a class="subscribe" href="https://youtube.com/@hrcloudgaming1125?si=2F_kqo5gSqQfstzt" target="_blank">
+        📺 Subscribe to [YouTuber]
+    </a>
+
+    <!-- Like Button -->
+    <div>
+        <button id="likeBtn">❤️ Like <span id="likeCount">0</span></button>
+    </div>
+
+    <!-- Comment Section -->
+    <div id="comments">
+        <h2>Leave a Comment</h2>
+        <input type="text" id="commentInput" placeholder="Write your comment...">
+        <button onclick="addComment()">Post</button>
+        <div id="commentList"></div>
+    </div>
+
+    <script>
+        // Like Button Counter
+        let likeCount = 0;
+        document.getElementById("likeBtn").addEventListener("click", function() {
+            likeCount++;
+            document.getElementById("likeCount").innerText = likeCount;
+        });
+
+        // Add Comment
+        function addComment() {
+            let commentText = document.getElementById("commentInput").value;
+            if (commentText.trim() !== "") {
+                let commentBox = document.createElement("div");
+                commentBox.classList.add("comment-box");
+                commentBox.innerText = commentText;
+                document.getElementById("commentList").appendChild(commentBox);
+                document.getElementById("commentInput").value = "";
+            } else {
+                alert("Please enter a comment!");
+            }
+        }
+    </script>
+
+
+
+</body></html>
